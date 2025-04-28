@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "996274254066",
+    "project_id": "veilguard",
+    "storage_bucket": "veilguard.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996274254066:android:596777c1c6ceb33e01e06b",
+        "android_client_info": {
+          "package_name": "com.damon.my_first_flutter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrWl63MCpvVr-E_UJDawI3cFNqBHEXkJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:996274254066:android:cec3eb1aaf1c210501e06b",
+        "android_client_info": {
+          "package_name": "com.example.veilguard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrWl63MCpvVr-E_UJDawI3cFNqBHEXkJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
