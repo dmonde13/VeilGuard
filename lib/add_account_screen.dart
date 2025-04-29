@@ -40,6 +40,7 @@ class _AddAccountScreenState extends State<AddAccountScreen> {
         'uid': uid,
         'app': _appController.text,
         'email': _emailController.text,
+        'secret': _secretController.text, // <-- Add this line
         'createdAt': FieldValue.serverTimestamp(),
       }).then((value) async {
         print('✅ Account saved successfully');
