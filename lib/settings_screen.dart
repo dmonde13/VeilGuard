@@ -87,15 +87,6 @@ class SettingsScreen extends StatelessWidget {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user != null) {
-        // Re-authenticate if necessary (for providers like Google/Facebook)
-        AuthCredential credential = EmailAuthProvider.credential(
-          email: user.email ?? '',
-          password: 'TestPassword123', // Use the current user's password here if needed
-        );
-
-        // Reauthenticate the user
-        await user.reauthenticateWithCredential(credential);
-
         // Delete the user's document from Firestore
         await FirebaseFirestore.instance.collection('users').doc(user.uid).delete();
 
@@ -107,16 +98,13 @@ class SettingsScreen extends StatelessWidget {
           const SnackBar(content: Text('Account successfully deleted')),
         );
 
-        // Delay the navigation to login screen to ensure Snackbar is visible
-        Future.delayed(const Duration(seconds: 2), () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const LoginScreen()),  // Ensure LoginScreen is imported
-          );
-        });
+        // Navigate to login screen immediately
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()),
+        );
       }
     } catch (e) {
-      // Handle errors (e.g., account deletion failed)
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Failed to delete account. Please try again.')),
       );

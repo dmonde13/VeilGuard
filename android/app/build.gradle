@@ -8,12 +8,6 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
-def keystoreProperties = Properties()
-def keystorePropertiesFile = rootProject.file("key.properties")
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-}
-
 android {
     namespace = "com.damon.my_first_flutter_app"
     compileSdk = flutter.compileSdkVersion
@@ -41,10 +35,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
+            storeFile file('upload-keystore.jks')
+            storePassword 'millyRawk30LujiDud!'
+            keyAlias 'upload'
+            keyPassword 'millyRawk30LujiDud!'
         }
     }
 
@@ -52,7 +46,7 @@ android {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig signingConfigs.getByName("release")
         }
     }
 }
