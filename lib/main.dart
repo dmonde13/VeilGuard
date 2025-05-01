@@ -79,7 +79,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('VeilGuard'),
+        title: const Text(
+          'VeilGuard',
+          style: TextStyle(
+            fontFamily: 'sans-serif-medium',
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
