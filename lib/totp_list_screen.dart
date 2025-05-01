@@ -168,17 +168,27 @@ class _TOTPListScreenState extends State<TOTPListScreen> {
                           valueListenable: _secondsRemainingNotifier,
                           builder: (context, secondsRemaining, _) {
                             final code = _generateTOTP(secret: account['secret'] ?? '');
-                            return InkWell(
-                              onTap: () {
-                                Clipboard.setData(ClipboardData(text: code));
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(content: Text('Code copied to clipboard ✔')),
-                                );
-                              },
-                              child: Text(
-                                code,
-                                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
+                            return Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  code,
+                                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                                ),
+                                IconButton(
+                                  icon: const Icon(Icons.copy),
+                                  tooltip: 'Copy code',
+                                  onPressed: () {
+                                    Clipboard.setData(ClipboardData(text: code));
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: const Text('Code copied ✔'),
+                                        duration: const Duration(seconds: 2),
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ],
                             );
                           },
                         ),
