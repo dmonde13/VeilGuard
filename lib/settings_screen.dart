@@ -39,6 +39,13 @@ class SettingsScreen extends StatelessWidget {
               label: const Text('Logout'),
               onPressed: () async {
                 await FirebaseAuth.instance.signOut();
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
+                    (route) => false,
+                  );
+                }
               },
             ),
             const SizedBox(height: 12),
