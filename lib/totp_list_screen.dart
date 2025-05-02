@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:totp/totp.dart';
+import 'package:otp/otp.dart';
 import 'package:base32/base32.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -55,12 +55,17 @@ class _TOTPListScreenState extends State<TOTPListScreen> {
   String _generateTOTP({required String secret}) {
     try {
       final cleanedSecret = secret.replaceAll(' ', '').toUpperCase();
-      print('Generating TOTP with secret: $cleanedSecret'); // Debug print
-      final decodedSecret = base32.decode(cleanedSecret);
-      final totp = Totp(secret: decodedSecret, digits: 6);
-      return totp.now();
+      final code = OTP.generateTOTPCodeString(
+        cleanedSecret,
+        DateTime.now().millisecondsSinceEpoch,
+        interval: 30,
+        length: 6,
+        algorithm: Algorithm.SHA1,
+        isGoogle: true,
+      );
+      return code;
     } catch (e) {
-      print('Error generating TOTP: $e'); // Debug print
+      print('Error generating TOTP: $e');
       return '⚠️ Invalid';
     }
   }

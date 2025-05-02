@@ -296,14 +296,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  hotp:
-    dependency: transitive
-    description:
-      name: hotp
-      sha256: "5e2e9cf22263e44fa1a733976d7ec3e527357bec5fe98bd145749d6d55a363fb"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0"
   html:
     dependency: transitive
     description:
@@ -376,6 +368,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.1.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: c8245ada5f1717ed44271ed1c26b8ce85ca3228fd2ffdb75468ab01979309d61
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.0"
   matcher:
     dependency: transitive
     description:
@@ -408,6 +408,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.10"
+  otp:
+    dependency: "direct main"
+    description:
+      name: otp
+      sha256: fcb7f21e30c4cd80a0a982c27a9b75151cc1fe3d8f7ee680673c090171b1ad55
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.4"
   path:
     dependency: transitive
     description:
@@ -549,14 +557,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.3"
-  totp:
-    dependency: "direct main"
+  timezone:
+    dependency: transitive
     description:
-      name: totp
-      sha256: "69405972a4a288d83ea57551a79e08479678b78fbfbc4ea64bd4be7687a775c6"
+      name: timezone
+      sha256: "2236ec079a174ce07434e89fcd3fcda430025eb7692244139a9cf54fdcf1fc7d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.0"
+    version: "0.9.4"
   typed_data:
     dependency: transitive
     description:
