@@ -58,7 +58,7 @@ class SettingsScreen extends StatelessWidget {
             const SizedBox(height: 12),
             const Center(
               child: Text(
-                'VeilGuard v1.0.0',
+                'VeilGuard v1.0.4',
                 style: TextStyle(color: Colors.grey),
               ),
             ),
