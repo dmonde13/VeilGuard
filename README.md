@@ -1,22 +1,28 @@
 # VeilGuard
 
-VeilGuard is a secure app that helps you manage and generate one-time passcodes (TOTP) for your online accounts.
+**VeilGuard** is a two-factor authentication (2FA) app that allows users to generate time-based one-time passcodes (TOTP) to secure their online accounts.
 
-## Features:
-- Secure storage of account information
-- Simple interface to view and manage your accounts
-- One-time passcode generation for your accounts
+## Features
 
-## Installation
+- Add and manage multiple TOTP accounts
+- View real-time 6-digit codes with automatic refresh
+- Tap a code to copy it to the clipboard (with visual confirmation)
+- Firebase Authentication for secure user login
+- Firestore integration to store TOTP entries per user account
 
-1. Clone the repository
-2. Run `flutter pub get` to install dependencies
-3. Use `flutter run` to run the app on an emulator or connected device
+## Technologies Used
 
-## Usage
+- Flutter (Dart)
+- Firebase Authentication
+- Firebase Firestore
+- Provider (state management)
+- TOTP package
 
-- Upon opening the app, you can add new accounts, view codes, and access settings.
+## Download
 
-## License
+VeilGuard is available on the Google Play Store:
+https://play.google.com/store/apps/details?id=com.damon.my_first_flutter_app&utm_source=na_Med
 
-This project is licensed under the MIT License.
+## Notes
+
+This app was developed as a final project for **CS 4750 – Mobile Application Development** at **Cal Poly Pomona**.
