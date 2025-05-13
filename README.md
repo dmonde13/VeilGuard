@@ -22,7 +22,3 @@
 
 VeilGuard is available on the Google Play Store:
 https://play.google.com/store/apps/details?id=com.damon.my_first_flutter_app&utm_source=na_Med
-
-## Notes
-
-This app was developed as a final project for **CS 4750 – Mobile Application Development** at **Cal Poly Pomona**.
